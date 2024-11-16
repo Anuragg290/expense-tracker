@@ -1,0 +1,48 @@
+{
+  "transactions": [
+    {
+      "id": "5578",
+      "description": "food",
+      "amount": 1000,
+      "type": "expense"
+    },
+    {
+      "id": "08ac",
+      "description": "salary",
+      "amount": 20000,
+      "type": "income"
+    },
+    {
+      "id": "3eed",
+      "description": "rent",
+      "amount": 2000,
+      "type": "expense"
+    },
+    {
+      "id": "56a6",
+      "description": "bike emi",
+      "amount": 2000,
+      "type": "expense"
+    },
+    {
+      "id": "0a3c",
+      "description": "Saving",
+      "amount": 2000,
+      "type": "expense"
+    },
+    {
+      "id": "4611",
+      "description": "Health",
+      "amount": 200,
+      "type": "expense"
+    }
+  ],
+  "budgets": {
+    "monthly": 500,
+    "categories": {
+      "Food": 150,
+      "Utilities": 100,
+      "Entertainment": 50
+    }
+  }
+}
