@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import budget from './images/budget.png'
+import logo from './images/logo-black.png'
 const Signin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -48,7 +48,7 @@ const Signin = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             alt="Your Company"
-            src={budget}
+            src={logo}
             className="mx-auto h-10 w-auto"
           />
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">

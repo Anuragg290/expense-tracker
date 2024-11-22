@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
-import budget from './images/budget.png'
+import logo from '../images/logo-black.png'
 
 const navigation = [
   { name: 'Home', href: '#' },
@@ -31,7 +31,7 @@ export default function NavbarAfter() {
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
-                src={budget}
+                src={logo}
                 className="h-8 w-auto"
               />
             </a>
@@ -70,7 +70,7 @@ export default function NavbarAfter() {
                 <span className="sr-only">Your Company</span>
                 <img
                   alt=""
-                  src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                  src={logo}
                   className="h-8 w-auto"
                 />
               </a>

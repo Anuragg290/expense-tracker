@@ -4,8 +4,7 @@ import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useNavigate } from 'react-router-dom'
-import budget from './images/budget.png'
-import logo from './images/logo-black.png'
+import logo from '../images/logo-black.png'
 
 const navigation = [
   { name: 'Home', href: '#'},
@@ -58,7 +57,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <img
-                src={budget}
+                src={logo}
                 alt=""
                 className="h-8 w-auto"
               />

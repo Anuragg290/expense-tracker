@@ -1,15 +1,15 @@
 import React from 'react';
-import NavbarBefore from './Navbar';
-import Landing from './Landing';
-import Features from './Features.Jsx';
-import Grids from './Grids'
-import Reviews from './Reviews';
-import Footer from './Footer';
+import Navbar from './landingpage/Navbar';
+import Landing from './landingpage/Landing';
+import Features from './landingpage/Features';
+import Grids from './landingpage/Grids'
+import Reviews from './landingpage/Reviews';
+import Footer from './landingpage/Footer';
 
 const LandingPage = () => {
   return (
     <div>
-      <NavbarBefore />
+      <Navbar />
       <Landing/>
       <Features/>
      <Grids/>

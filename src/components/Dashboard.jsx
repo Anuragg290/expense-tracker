@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Box, Grid, Paper } from "@mui/material";
-import SummaryCard from "./SummaryCard";
-import TransactionTable from "./TransactionTable";
-import EditTransactionForm from "./EditTransactionForm";
-import ChartContainer from "./ChartContainer";
-import AddExpenses from "./AddExpenses";
-import NavbarAfter from "./NavbarAfter";
+import SummaryCard from "./dashboard/SummaryCard";
+import TransactionTable from "./transactions/TransactionTable";
+import EditTransactionForm from "./transactions/EditTransactionForm";
+import ChartContainer from "./dashboard/ChartContainer";
+import AddExpenses from "./transactions/AddExpenses";
+import NavbarAfter from "./dashboard/NavbarAfter";
 
 function Dashboard() {
   const [transactions, setTransactions] = useState([]);
