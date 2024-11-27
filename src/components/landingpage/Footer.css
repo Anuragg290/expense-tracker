@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push the footer to the bottom */
+    align-items: center; /* Center content horizontally */
+   
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  footer {
+    width: 100%; /* Make footer full width */
+    padding: 10px 20px;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: center; /* Center navigation links horizontally */
+    padding: 0;
+    list-style: none;
+  }
+  
+  .nav-item {
+    margin: 0 10px; /* Add spacing between navigation links */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #6c757d; /* Neutral text color */
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #007BFF; /* Change color on hover */
+  }
+  
+  .text-body-secondary {
+    color: #6c757d; /* Secondary text color */
+  }
+  

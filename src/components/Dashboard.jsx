@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Box, Grid, Paper } from "@mui/material";
+import { Box, Grid, Paper, Typography } from "@mui/material";
 import SummaryCard from "./dashboard/SummaryCard";
 import TransactionTable from "./transactions/TransactionTable";
 import EditTransactionForm from "./transactions/EditTransactionForm";
 import ChartContainer from "./dashboard/ChartContainer";
 import AddExpenses from "./transactions/AddExpenses";
 import NavbarAfter from "./dashboard/NavbarAfter";
+import Footer from "./landingpage/Footer";
 
 function Dashboard() {
   const [transactions, setTransactions] = useState([]);
@@ -85,24 +86,25 @@ function Dashboard() {
       <NavbarAfter />
       <Box
         sx={{
-          p: 3,
-          mt: 10,
-          backgroundColor: "#F8F7FF", // Lightest pink from the palette
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.3)",
-          borderRadius: 2,
-          border: "1px solid rgba(255, 255, 255, 0.3)",
+          p: 4,
+          mt: 8,
+          backgroundColor: "linear-gradient(135deg, #e0f7fa 30%, #80deea 90%)",
+          borderRadius: 3,
         }}
       >
+        <Typography variant="h4" gutterBottom textAlign="center" sx={{ color: "#004d40", fontWeight: "bold", mb:3, }}>
+          Dashboard Overview 
+        </Typography>
+
         <Grid container spacing={3}>
           <Grid item xs={12} sm={4}>
             <SummaryCard
               title="Total Income"
               amount={totalIncome}
               sx={{
-                backgroundColor: "#B8B8FF", // Lavender shade
-                color: "black", // Dark text for contrast
+                backgroundColor: "#b2dfdb",
+                color: "#004d40",
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
               }}
             />
           </Grid>
@@ -111,8 +113,9 @@ function Dashboard() {
               title="Total Expenses"
               amount={totalExpenses}
               sx={{
-                backgroundColor: "#141122", // Slightly darker lavender
-                color: "white",
+                backgroundColor: "#ffab91",
+                color: "#bf360c",
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
               }}
             />
           </Grid>
@@ -121,24 +124,22 @@ function Dashboard() {
               title="Balance"
               amount={totalIncome - totalExpenses}
               sx={{
-                backgroundColor: "#B8B8FF", 
-                color: "Black",
+                backgroundColor: "#80cbc4",
+                color: "#004d40",
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
               }}
             />
           </Grid>
         </Grid>
 
-        <Grid container spacing={3} sx={{ mt: 3 }}>
+        <Grid container spacing={3} sx={{ mt: 4 }}>
           <Grid item xs={12} md={6}>
-            <Paper>
-              <ChartContainer
-                totalIncome={totalIncome}
-                totalExpenses={totalExpenses}
-              />
+            <Paper elevation={3} sx={{ backgroundColor: "#e3f2fd" }}>
+              <ChartContainer totalIncome={totalIncome} totalExpenses={totalExpenses} />
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Paper>
+            <Paper elevation={3} sx={{ backgroundColor: "rgba(255,255,255,0.533)" }}>
               <TransactionTable
                 transactions={transactions}
                 onEdit={setEditTransaction}
@@ -148,15 +149,13 @@ function Dashboard() {
           </Grid>
         </Grid>
 
-        <Box sx={{ mt: 3 }}>
+        <Box sx={{ mt: 4 }}>
           <Paper
-            elevation={3}
+            elevation={4}
             sx={{
-              p: 2,
-              borderRadius: 2,
-              backgroundColor: "#F8F7FF", // Lavender
-              backdropFilter: "blur(8px)",
-              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+              borderRadius: 3,
+              backgroundColor: "#e8f5e9",
+              boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.1)",
             }}
           >
             <AddExpenses onAddTransaction={handleAddTransaction} />
@@ -164,27 +163,26 @@ function Dashboard() {
         </Box>
 
         {editTransaction && (
-          <Box sx={{ mt: 3 }}>
-            <Paper
-              elevation={3}
-              sx={{
-                p: 2,
-                borderRadius: 2,
-                backgroundColor: "#F8F7FF", // Lightest pink for modal
-                backdropFilter: "blur(10px)",
-                boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
-              }}
-            >
-              <EditTransactionForm
-                transaction={editTransaction}
-                setTransaction={setEditTransaction}
-                onSave={handleSaveUpdate}
-                onCancel={() => setEditTransaction(null)}
-              />
-            </Paper>
-          </Box>
+          <Paper
+            elevation={4}
+            sx={{
+              mt: 4,
+              borderRadius: 3,
+              backgroundColor: "rgb(227, 242, 253)",
+              boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            <EditTransactionForm
+              transaction={editTransaction}
+              setTransaction={setEditTransaction}
+              onSave={handleSaveUpdate}
+              onCancel={() => setEditTransaction(null)}
+            />
+          </Paper>
         )}
       </Box>
+
+      <Footer />
     </>
   );
 }

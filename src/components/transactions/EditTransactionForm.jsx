@@ -11,14 +11,18 @@ const EditTransactionForm = ({
     sx={{
       mt: 3,
       p: 3,
-      bgcolor: "background.paper",
-      borderRadius: 2,
-      boxShadow: 3,
+      backgroundColor: "rgba(255, 255, 255, 0.2)", // Semi-transparent white
+      backdropFilter: "blur(10px)", // Frosted-glass effect
+      borderRadius: 3, // Rounded corners
+      border: "1px solid rgba(255, 255, 255, 0.3)", // Subtle border
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", // Slight shadow for depth
     }}
   >
     <Typography variant="h6" gutterBottom>
       Edit Transaction
     </Typography>
+
+    {/* Description Input */}
     <TextField
       fullWidth
       label="Description"
@@ -28,7 +32,9 @@ const EditTransactionForm = ({
       }
       sx={{ mb: 2 }}
     />
-    <TextField
+
+    {/* Amount Input */}
+    <TextField 
       fullWidth
       label="Amount"
       type="number"
@@ -37,7 +43,10 @@ const EditTransactionForm = ({
         setTransaction({ ...transaction, amount: parseFloat(e.target.value) })
       }
       sx={{ mb: 2 }}
+      
     />
+
+    {/* Type Selector */}
     <Select
       fullWidth
       value={transaction.type}
@@ -47,6 +56,8 @@ const EditTransactionForm = ({
       <MenuItem value="income">Income</MenuItem>
       <MenuItem value="expense">Expense</MenuItem>
     </Select>
+
+    {/* Action Buttons */}
     <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
       <Button variant="contained" color="primary" onClick={onSave} sx={{ mr: 1 }}>
         Save

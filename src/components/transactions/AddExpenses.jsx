@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Box, Typography, TextField, Select, MenuItem, Button } from "@mui/material";
 
 function AddExpenses({ onAddTransaction }) {
   const [newTransaction, setNewTransaction] = useState({
@@ -17,47 +18,71 @@ function AddExpenses({ onAddTransaction }) {
   };
 
   return (
-    <div>
-      <h2 className="text-2xl text-center mt-8 mb-4 font-semibold">Add Transaction</h2>
-      <form onSubmit={handleAddTransaction} className="mb-6">
-        <input
-          type="text"
-          placeholder="Description"
+    <Box
+      sx={{
+        mt: 4,
+        p: 3,
+        // Semi-transparent white for glass effect
+        backdropFilter: "blur(10px)", // Frosted-glass effect
+        WebkitBackdropFilter: "blur(10px)", // Safari compatibility
+        borderRadius: 3,
+        border: "1px solid rgba(255, 255, 255, 0.3)", // Subtle border
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", // Slight shadow for depth
+      }}
+    >
+      <Typography variant="h6" textAlign="center" gutterBottom>
+        Add Transaction
+      </Typography>
+      <form onSubmit={handleAddTransaction}>
+        {/* Description Field */}
+        <TextField
+          fullWidth
+          label="Description"
           value={newTransaction.description}
           onChange={(e) =>
             setNewTransaction({ ...newTransaction, description: e.target.value })
           }
-          className="w-full mb-3 p-2 rounded border border-gray-300"
+          sx={{ mb: 2 }}
           required
         />
-        <input
+
+        {/* Amount Field */}
+        <TextField
+          fullWidth
+          label="Amount"
           type="number"
-          placeholder="Amount"
           value={newTransaction.amount}
           onChange={(e) =>
             setNewTransaction({ ...newTransaction, amount: e.target.value })
           }
-          className="w-full mb-3 p-2 rounded border border-gray-300"
+          sx={{ mb: 2 }}
           required
         />
-        <select
+
+        {/* Type Selector */}
+        <Select
+          fullWidth
           value={newTransaction.type}
           onChange={(e) =>
             setNewTransaction({ ...newTransaction, type: e.target.value })
           }
-          className="w-full mb-3 p-2 rounded border border-gray-300"
+          sx={{ mb: 2 }}
         >
-          <option value="income">Income</option>
-          <option value="expense">Expense</option>
-        </select>
-        <button
+          <MenuItem value="income">Income</MenuItem>
+          <MenuItem value="expense">Expense</MenuItem>
+        </Select>
+
+        {/* Submit Button */}
+        <Button
           type="submit"
-          className="w-full bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+          variant="contained"
+          color="success"
+          fullWidth
         >
           Add Transaction
-        </button>
+        </Button>
       </form>
-    </div>
+    </Box>
   );
 }
 

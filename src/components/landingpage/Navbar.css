@@ -1,69 +1,88 @@
-/* NavBar.css */
+/* General styling for the nav bar */
+.containers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+  font-weight:bolder;
+  font-size: 18px;
+  position: sticky;
+  top: 0;
+  width: 100%; /* Full width */
+  background-color: rgba(75, 9, 181, 0.685); /* Semi-transparent white */
+  backdrop-filter: blur(20px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Optional border */
+  z-index: 1000;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
-    background-color: #f2f2f7;
-    font-family: Arial, sans-serif;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo {
-    display: flex;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.7rem;
-    color: black;
-  }
-  
-  .logo-icon {
-    margin-right: 0.5rem;
-  }
-  
-  .nav-links {
-    display: flex;
-    list-style: none;
-  }
-  
-  .nav-links li {
-    margin-right: 1.5rem;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .nav-links a.active {
-    color: #a280ff; /* Purple color for active link */
-  }
-  
-  .nav-actions{
-    padding: 0.7rem;
-   
-  }
-  
-  .search-icon {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    margin-right: 0.4rem;
-    cursor: pointer;
-  }
-  
-  .sign-in {
-    border: 1px solid #333;
-    background-color: transparent;
-    color: black;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
+.darknav {
+  background-color: rgba(38, 74, 100, 0); /* Semi-transparent dark */
+  color: rgb(0, 0, 0);
+  font-weight:bolder;
+}
+
+/* Logo styling */
+.logo {
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Navigation menu styling */
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin: 0 15px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #000; /* Default link color */
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: #007BFF; /* Highlight link on hover */
+}
+
+ul li .btn {
+  background-color: rgba(0, 123, 255, 0.8); /* Button background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+ul li .btn:hover {
+  background-color: rgba(0, 86, 179, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
 
-  
+  ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ul li {
+    margin: 10px 0;
+  }
+}

@@ -1,12 +1,11 @@
 'use client'
-import Navbar from './Navbar'
-import './Landing.css';
 
+import './Landing.css';
+import Navbar from "./Navbar";
 export default function Landing() {
   return (
     <div className="custom-background">
-      <Navbar/>
-      
+     
       <main className="relative px-6 pt-14 lg:px-8">
         <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
           <div className="relative w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:w-[72.1875rem]" style={{

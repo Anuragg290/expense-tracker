@@ -17,9 +17,9 @@ const TransactionTable = ({ transactions, onEdit, onDelete }) => (
       maxHeight: 380, 
       overflowY: "auto", 
       borderRadius: 2, 
-      backgroundColor: "rgba(255, 255, 255, 0.7)", 
-      backdropFilter: "blur(10px)",
-      WebkitBackdropFilter: "blur(10px)", 
+      backgroundColor: "rgba(255, 255, 255, 0.6)", 
+      backdropFilter: "blur(100px)",
+      WebkitBackdropFilter: "blur(100px)", 
       boxShadow: 3,
       border: "1px solid rgba(255, 255, 255, 0.3)", 
     }}
@@ -45,7 +45,7 @@ const TransactionTable = ({ transactions, onEdit, onDelete }) => (
             }}
           >
             <TableCell>{transaction.description}</TableCell>
-            <TableCell>${transaction.amount}</TableCell>
+            <TableCell>Rs {transaction.amount}</TableCell>
             <TableCell
               sx={{
                 color: transaction.type === "Income" ? "green" : "red",

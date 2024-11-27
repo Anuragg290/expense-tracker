@@ -13,16 +13,34 @@
       "type": "income"
     },
     {
-      "id": "b6f8",
-      "description": "fee",
-      "amount": 12334,
+      "id": "9bc3",
+      "description": "tution",
+      "amount": 2500,
       "type": "income"
     },
     {
-      "id": "9bc3",
-      "description": "tution",
-      "amount": 25000,
+      "id": "0ef1",
+      "description": "Fees",
+      "amount": 7000,
       "type": "income"
+    },
+    {
+      "id": "323c",
+      "description": "Dance Club",
+      "amount": 2300,
+      "type": "expense"
+    },
+    {
+      "id": "d14e",
+      "description": "Party",
+      "amount": 12000,
+      "type": "expense"
+    },
+    {
+      "id": "2c0a",
+      "description": "Rent",
+      "amount": 3000,
+      "type": "expense"
     }
   ],
   "budgets": {
